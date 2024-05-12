@@ -2,7 +2,7 @@ import React from 'react';
 import { Row } from 'react-bootstrap';
 import Movie from '../Movie/Movie';
 import './MovieList.css'; 
-//MovieList
+
 function MovieList({ jsonRes }) {
   return (
     <div className="movie-list-container">
@@ -22,3 +22,5 @@ function MovieList({ jsonRes }) {
 }
 
 export default MovieList;
+ 
+
