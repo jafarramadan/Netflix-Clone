@@ -10,21 +10,23 @@ function FavList({ jsonRes }){
     }, []);
 
     const sendReq = async () => {
-        const serverURL ="http://localhost:8080/getMovies";
-        const res = await fetch(serverURL);
+        const apiUrl = process.env.REACT_APP_API_URL;
+        const res = await fetch(`${apiUrl}/getMovies`);
         const jsonRes = await res.json();
         setFavMovies(jsonRes);
     };
 
     const deleteItem = async (id) => {
-        const serverURL = `http://localhost:8080/deleteMovie/${id}`;
-        const res = await fetch(serverURL, { method: "DELETE" });
+        const apiUrl = process.env.REACT_APP_API_URL;
+       
+        const res = await fetch(`${apiUrl}/deleteMovie/${id}`, { method: "DELETE" });
         if (res.ok) {
             setFavMovies((prevMovies) => prevMovies.filter(movie => movie.id !== id));
         }
     }
 
     const handleUpdate = async (movieId, updatedComment) => {
+        const apiUrl = process.env.REACT_APP_API_URL;
         const updatedMovies = favMovies.map(movie => {
             if (movie.id === movieId) {
                 return { ...movie, comment: updatedComment };
@@ -33,7 +35,7 @@ function FavList({ jsonRes }){
         });
         setFavMovies(updatedMovies);
 
-        const serverURL = `http://localhost:8080/editMovie/${movieId}`;
+        const serverURL = `${apiUrl}/editMovie/${movieId}`;
         const res = await fetch(serverURL, {
             method: "PUT",
             headers: {
@@ -102,3 +104,4 @@ function FavList({ jsonRes }){
 }
 
 export default FavList;
+//n

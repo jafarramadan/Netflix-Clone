@@ -6,8 +6,8 @@ import './ModalMovie.css'
 
 function ModalMovie({ openModal, closeModal, selectMovie, comment, setComment }) {
     const handleSaveToFavorites = async () => {
-        
-            await axios.post('http://localhost:8080/addMovie', {
+        const apiUrl = process.env.REACT_APP_API_URL;
+            await axios.post(`${apiUrl}/addMovie`, {
                 original_title: selectMovie.title,
                 release_date: selectMovie.release_date,
                 poster_path: selectMovie.image,
