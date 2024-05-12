@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import MovieList from "../MovieList/MovieList";
 import "./Home.css"; 
-import FavList from "../FavList /FavList ";
+
+
 
 function Home() {
   const [trendingMovies, setTrendingMovies] = useState([]);
@@ -11,8 +12,9 @@ function Home() {
   }, []);
 
   const sendReq = async () => {
+    const apiUrl = process.env.REACT_APP_API_KEY;
     const serverURL =
-      "https://api.themoviedb.org/3/trending/all/week?api_key=18976591dc16bc5a0867e48d4ff172ec";
+      `https://api.themoviedb.org/3/trending/all/week?api_key=${apiUrl}`;
     const res = await fetch(serverURL);
     const jsonRes = await res.json();
     setTrendingMovies(jsonRes.results);
