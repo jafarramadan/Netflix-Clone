@@ -13,8 +13,8 @@ function App() {
     <>
     <NavBar/>
     <Routes>
-    <Route path='/' element={<Home /> }/> 
-    <Route path='/favlist' element={<FavList /> }/> 
+    <Route path='/' element={<Home/>}/> 
+    <Route path='/favlist' element={<FavList/>}/> 
     </Routes>
     </>
   );
