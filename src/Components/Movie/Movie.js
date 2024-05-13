@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Card, Col, Button } from 'react-bootstrap';
-
 import ModalMovie from '../ModalMovie/ModalMovie';
 import './Movie.css'; 
 
@@ -41,10 +40,10 @@ function Movie(props) {
                     ) : (
                         <Card.Text>{truncatedOverview()}...</Card.Text>
                     )}
-                    <Button variant="link" onClick={toggleOverview}>
+                    <Button variant="link" className="card-button" onClick={toggleOverview}>
                         {showFullOverview ? 'See Less' : 'See More'}
                     </Button>
-                    <br/>
+                    <br />
                     <Button
                         variant="link"
                         className="like-button"
