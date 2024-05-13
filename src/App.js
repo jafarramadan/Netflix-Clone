@@ -3,7 +3,7 @@ import './App.css';
 import Home from './Components/Home/Home';
 import { Route, Routes } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import FavList from './Components/FavList /FavList ';
+import FavList from './Components/FavList/FavList';
 import NavBar from './Components/Navbar/Navbar';
 
 
