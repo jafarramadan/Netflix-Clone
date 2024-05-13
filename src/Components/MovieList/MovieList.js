@@ -4,6 +4,7 @@ import Movie from '../Movie/Movie';
 import './MovieList.css'; 
 
 function MovieList({ jsonRes }) {
+  
   return (
     <div className="movie-list-container">
       {jsonRes.map((movie) => (

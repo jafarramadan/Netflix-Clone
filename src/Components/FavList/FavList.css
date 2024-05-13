@@ -1,0 +1,33 @@
+
+
+.movie-card {
+    width: 18rem;
+    background-color: #343a40;
+    color: white;
+    margin-bottom: 20px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.movie-card:hover {
+    transform: translateY(-5px);
+}
+
+.movie-card img {
+    height: 300px;
+    object-fit: cover;
+}
+
+.movie-card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.movie-card-text {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.movie-card-buttons {
+    display: flex;
+    justify-content: space-between;
+}
