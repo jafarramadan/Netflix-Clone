@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Card, Col, Button } from 'react-bootstrap';
 
 import ModalMovie from '../ModalMovie/ModalMovie';
+import './Movie.css'; 
 
 function Movie(props) {
     const [showFullOverview, setShowFullOverview] = useState(false);
@@ -31,7 +32,7 @@ function Movie(props) {
 
     return (
         <Col>
-            <Card style={{ width: '18rem' }}>
+            <Card className="movie-card">
                 <Card.Img variant="top" src={`https://image.tmdb.org/t/p/w500${props.image}`} />
                 <Card.Body>
                     <Card.Title>{props.title}</Card.Title>
@@ -46,17 +47,8 @@ function Movie(props) {
                     <br/>
                     <Button
                         variant="link"
-                        style={{
-                            fontSize: '2rem',
-                            marginTop: '10px',
-                            color: 'red',
-                            textDecoration: 'none',
-                            transition: 'transform 0.3s ease',
-                            cursor: 'pointer'
-                        }}
+                        className="like-button"
                         onClick={() => openModal(props)}
-                        onMouseEnter={(e) => { e.target.style.transform = 'scale(1.2)'; }}
-                        onMouseLeave={(e) => { e.target.style.transform = 'scale(1)'; }}
                     >
                         ❤️
                     </Button>

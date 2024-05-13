@@ -1,0 +1,29 @@
+
+
+.movie-card {
+    background-color: #1f1f1f; 
+    color: #ffffff; 
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.movie-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.like-button {
+    font-size: 2rem;
+    margin-top: 10px;
+    color: red;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.like-button:hover {
+    transform: scale(1.2);
+}

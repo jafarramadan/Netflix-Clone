@@ -1,21 +1,32 @@
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
+import React from 'react';
 import { Link } from 'react-router-dom';
-
+import Navbar from 'react-bootstrap/Navbar';
+import Nav from 'react-bootstrap/Nav';
+import Container from 'react-bootstrap/Container';
 
 function NavBar() {
+  const navStyle = {
+    backgroundColor: '#171717', 
+    color: '#fff', 
+    paddingTop: '10px', 
+    paddingBottom: '10px',
+    boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
+  };
+
+  const linkStyle = {
+    color: '#fff', 
+    transition: 'color 0.3s ease', 
+  };
+
   return (
-    <Navbar expand="lg" className="bg-body-tertiary">
+    <Navbar expand="lg" variant="dark" style={navStyle} fixed="top"> 
       <Container>
-        <Navbar.Brand href="#home"></Navbar.Brand>
+        <Navbar.Brand as={Link} to="/" style={linkStyle}>TRENDING MOVIES</Navbar.Brand> 
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-          
-        <Link to="/" style={{ color: '#fff', textDecoration: 'none', marginRight: '10px', transition: 'color 0.3s ease' }}>HOME</Link>
-        <Link to="/favlist" style={{ color: '#fff', textDecoration: 'none', marginRight: '10px', transition: 'color 0.3s ease' }}>FAVORITE</Link>
-
+            <Nav.Link as={Link} to="/" style={linkStyle}>HOME</Nav.Link> 
+            <Nav.Link as={Link} to="/favlist" style={linkStyle}>FAVORITE</Nav.Link> 
           </Nav>
         </Navbar.Collapse>
       </Container>

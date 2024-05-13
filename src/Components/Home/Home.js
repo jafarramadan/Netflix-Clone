@@ -23,6 +23,8 @@ function Home() {
 
   return (
     <>
+    
+    <br></br>
     <div className="home-container">
       <h2 className="home-title">All Trending Movies</h2>
       <div className="movie-list-container">
