@@ -10,11 +10,11 @@ function Home() {
   }, []);
 
   const sendReq = async () => {
-    const serverURL =
-      "https://api.themoviedb.org/3/trending/all/week?api_key=18976591dc16bc5a0867e48d4ff172ec";
+   // https://movies-library-6vpj.onrender.com/trending
+   const serverURL = `https://movies-library-6vpj.onrender.com/trending`;
     const res = await fetch(serverURL);
     const jsonRes = await res.json();
-    setTrendingMovies(jsonRes.results);
+    setTrendingMovies(jsonRes);
   };
 
   return (
